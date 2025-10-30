@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Learning Platform</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1 id="page-title">Digital Learning Platform</h1>
+  <h3 id="page-subtitle">For Rural School Students in Nabha</h3>
+
+  <!-- Example sections -->
+  <section id="welcome" class="section active">
+    <h2>Welcome</h2>
+    <form onsubmit="handleLogin(event)">
+      <label>Username:</label>
+      <input id="username" required />
+      <label>Password:</label>
+      <input id="password" type="password" required />
+      <label>Role:</label>
+      <select id="role">
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+        <option value="parent">Parent</option>
+        <option value="admin">Admin</option>
+      </select>
+      <button type="submit">Login / Register</button>
+    </form>
+  </section>
+
+  <section id="courses" class="section">
+    <h2>Courses</h2>
+    <input type="text" id="course-search" placeholder="Search..." onkeyup="searchCourses()" />
+    <ul id="courses-list"></ul>
+
+    <!-- Admin only -->
+    <div id="admin-course-form" class="hidden">
+      <input id="new-course-name" placeholder="New course name" />
+      <input id="new-course-link" placeholder="Course link" />
+      <button onclick="addNewCourse()">Add Course</button>
+    </div>
+  </section>
+
+  <section id="profile" class="section">
+    <h2>Profile</h2>
+    <div id="profile-info"></div>
+    <canvas id="certificateCanvas" width="800" height="600" style="display:none;border:1px solid #ccc;"></canvas>
+    <button onclick="generateCertificate()">Generate Certificate</button>
+    <button onclick="downloadCertificatePNG()">Download Certificate PNG</button>
+    <div id="badge-list"></div>
+  </section>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a id="nav-courses" href="#" onclick="showSection('courses')">Courses</a></li>
+      <li><a id="nav-profile" href="#" onclick="showSection('profile')">Profile</a></li>
+      <li><button id="dark-mode-toggle">🌓</button></li>
+      <li><button id="logout-btn" style="display:none;" onclick="logout()">Logout</button></li>
+    </ul>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>

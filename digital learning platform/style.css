@@ -1,0 +1,202 @@
+/* 🌐 Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: #f9fafc;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* 🧭 Navigation Bar */
+nav {
+  background: #2e8b57;
+  color: white;
+  padding: 10px 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+nav ul li a,
+nav ul li button {
+  background: transparent;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li button:hover,
+nav ul li a.active {
+  background: white;
+  color: #2e8b57;
+}
+
+/* 🏷️ Page Headings */
+#page-title {
+  text-align: center;
+  font-size: 2em;
+  color: #2e8b57;
+  margin-top: 20px;
+}
+
+#page-subtitle {
+  text-align: center;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* 📚 Section Styling */
+.section {
+  display: none;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.section.active {
+  display: block;
+}
+
+/* 🧾 Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+input, select, button {
+  padding: 10px 12px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 80%;
+  max-width: 300px;
+  transition: 0.3s;
+}
+
+input:focus, select:focus {
+  border-color: #2e8b57;
+}
+
+button {
+  background: #2e8b57;
+  color: white;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #256c46;
+}
+
+/* 🎖️ Badges */
+.badge {
+  display: inline-block;
+  background: #2e8b57;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.badge:hover {
+  background: #256c46;
+}
+
+/* 📜 Course List */
+#courses-list {
+  list-style: none;
+  padding: 0;
+}
+
+#courses-list li {
+  background: #f1f5f1;
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#courses-list li:hover {
+  background: #e5f3e5;
+}
+
+/* 🌗 Dark Mode */
+body.dark {
+  background: #1e1e1e;
+  color: #eee;
+}
+
+body.dark nav {
+  background: #1a472a;
+}
+
+body.dark nav ul li a,
+body.dark nav ul li button {
+  color: #eee;
+}
+
+body.dark nav ul li a:hover,
+body.dark nav ul li button:hover {
+  background: #eee;
+  color: #1a472a;
+}
+
+body.dark .section {
+  background: #2a2a2a;
+  color: #ddd;
+}
+
+body.dark input, body.dark select {
+  background: #333;
+  color: #eee;
+  border-color: #555;
+}
+
+body.dark button {
+  background: #3b8b57;
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  input, select, button {
+    width: 100%;
+  }
+}
